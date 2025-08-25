@@ -95,9 +95,6 @@ services:
     image: ${IMAGE_REGISTRY}/${IMAGE_GATEWAY}
     pull_policy: ${IMAGE_PULL_POLICY:-if_not_present}
     restart: always
-    ports:
-      - 8080:80
-      - ${NGINX_HTTPS_PORT:-443}:443
     environment:
       - TZ=${TIMEZONE}
     networks:
