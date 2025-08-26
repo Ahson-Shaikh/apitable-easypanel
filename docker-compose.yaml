@@ -8,7 +8,7 @@ services:
     expose:
       - "8080"
     env_file:
-      - "${ENV_FILE:-.env}"
+      - ".env.example"
     networks:
       - apitable
 
@@ -29,7 +29,7 @@ services:
     pull_policy: ${IMAGE_PULL_POLICY:-if_not_present}
     restart: always
     env_file:
-      - "${ENV_FILE:-.env}"
+      - ".env.example"
     expose:
       - "8081"
     environment:
@@ -60,7 +60,7 @@ services:
       - "3005"
       - "3007"
     env_file:
-      - "${ENV_FILE:-.env}"
+      - ".env.example"
     environment:
       - TZ=${TIMEZONE}
       - NODE_ENV=${ENV}
@@ -81,7 +81,7 @@ services:
     expose:
       - "8625"
     env_file:
-      - "${ENV_FILE:-.env}"
+      - ".env.example"
     environment:
       - TZ=${TIMEZONE}
     networks:
@@ -227,7 +227,7 @@ services:
     image: ${IMAGE_REGISTRY}/${IMAGE_INIT_APPDATA}
     pull_policy: ${IMAGE_PULL_POLICY:-if_not_present}
     env_file:
-      - "${ENV_FILE:-.env}"
+      - ".env.example"
     networks:
       - apitable
     depends_on:
