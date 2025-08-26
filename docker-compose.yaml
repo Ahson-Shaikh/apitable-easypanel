@@ -112,7 +112,6 @@ services:
         condition: service_completed_successfully
 
   minio:
-    container_name: minio
     image: ${IMAGE_MINIO}
     pull_policy: ${IMAGE_PULL_POLICY:-if_not_present}
     restart: always
@@ -138,7 +137,6 @@ services:
       retries: 30
 
   redis:
-    container_name: redis
     image: ${IMAGE_REDIS}
     pull_policy: ${IMAGE_PULL_POLICY:-if_not_present}
     restart: always
@@ -160,7 +158,6 @@ services:
       - apitable
 
   mysql:
-    container_name: mysql
     image: ${IMAGE_MYSQL}
     pull_policy: ${IMAGE_PULL_POLICY:-if_not_present}
     restart: always
@@ -187,7 +184,6 @@ services:
       - apitable
 
   rabbitmq:
-    container_name: rabbitmq
     image: ${IMAGE_RABBITMQ}
     pull_policy: ${IMAGE_PULL_POLICY:-if_not_present}
     restart: always
