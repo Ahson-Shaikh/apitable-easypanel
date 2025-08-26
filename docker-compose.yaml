@@ -95,6 +95,8 @@ services:
     restart: always
     environment:
       - TZ=${TIMEZONE}
+    expose:
+      - "80"
     networks:
       - apitable
     depends_on:
